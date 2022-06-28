@@ -6,14 +6,17 @@ application up and running.
 Things you may want to cover:
 
 * Ruby version
+3.1.2
 
 * System dependencies
 
 * Configuration
 
 * Database creation
+bin/rails db:migrate
 
 * Database initialization
+rake db:seed
 
 * How to run the test suite
 
@@ -21,4 +24,5 @@ Things you may want to cover:
 
 * Deployment instructions
 
-* ...
+* Run webApp
+bin/dev
