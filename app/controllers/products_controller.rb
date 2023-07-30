@@ -61,10 +61,10 @@ class ProductsController < ApplicationController
           redirect_to product_url(@product),
                       notice: 'Product was successfully updated.'
         end
-        format.json do
-          render :show, status: :ok,
-                        location: @product
-        end
+        format.json { render :show, status: :ok, location: @product }
+
+        @product.broadcast_replace_later_to 'products',
+                                            partial: 'store/product'
       else
         format.html do
           render :edit,
